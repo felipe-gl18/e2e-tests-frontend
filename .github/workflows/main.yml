@@ -25,5 +25,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Verify Cypress installation
+        run: npx cypress verify
+
       - name: Run Cypress tests
-        run: npm run cypress:headless
+        run: npx cypress run --headless
