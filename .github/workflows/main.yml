@@ -28,5 +28,8 @@ jobs:
       - name: Verify Cypress installation
         run: npx cypress verify
 
+      - name: Ensure Cypress binary is executable
+        run: chmod +x ./node_modules/cypress/bin/cypress
+
       - name: Run Cypress tests
         run: npx cypress run --headless
