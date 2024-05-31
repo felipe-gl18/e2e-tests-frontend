@@ -25,11 +25,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Verify Cypress installation
-        run: npx cypress verify
+      - name: List Cypress binary files and permissions
+        run: ls -l ./node_modules/cypress/bin
 
-      - name: Install Cypress globally
-        run: npm install -g cypress
+      - name: Ensure Cypress binary is executable
+        run: chmod +x ./node_modules/cypress/bin/cypress
 
-      - name: Run Cypress tests using global installation
-        run: cypress run --headless
+      - name: List Cypress binary files and permissions after chmod
+        run: ls -l ./node_modules/cypress/bin
+
+      - name: Run Cypress tests
+        run: npx cypress run --headless
