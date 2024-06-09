@@ -26,7 +26,7 @@ jobs:
         run: npm install
 
       - name: Verify Cypress installation
-        run: npx cypress verify
+        run: npx cypress verify --force
 
       - name: Run Cypress tests
         run: npx cypress run --headless
